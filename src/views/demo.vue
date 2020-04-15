@@ -1,25 +1,14 @@
 <template>
   <div>
-    <p v-for="item in demo">{{item}}</p>
-    <button @click="handleSave">改变</button>
+    demo
+    <div>======================</div>
+    <BaseDemo/>
   </div>
 </template>
 
 <script>
+import BaseDemo from '../components/BaseDeom'
 export default {
-  data(){
-    return {
-      demo:{
-        a:'百度',
-        b:'淘宝',
-        c:'京东',
-      }
-    }
-  },
-  methods:{
-    handleSave(){
-     this.$set(this.demo,'a','啊哈哈哈11111111111111')
-    }
-  }
+  components:{BaseDemo}
 }
 </script>

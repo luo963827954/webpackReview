@@ -22,22 +22,13 @@ module.exports = {
 			},
 			{
 				test: /\.(le|c)ss$/,
-				use: ['style-loader', 'css-loader', {
-					loader: 'postcss-loader',
-					options: {
-						plugins: function () {
-							return [
-								require('autoprefixer')({
-									"overrideBrowserslist": [
-										">0.25%",
-										"not dead"
-									]
-								})
-							]
-						}
-					}
-				}, 'less-loader'],
-				exclude: /node_modules/
+				use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
+				// exclude: /node_modules/
+			},
+			{
+				test: /\.scss$/,
+				use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+				// exclude: /node_modules/
 			},
 			{
 				test: /\.(png|jpg|gif|jpeg|webp|svg|eot|ttf|woff|woff2)$/,
